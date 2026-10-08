@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mes-taches",
+  "name": "mytask",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -12,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "mes-taches",
-      "database_id": "REMPLACE_PAR_TON_ID_D1",
+      "database_id": "0a0e02b4-0d53-4e0e-b661-17e1771e9ce8",
       "migrations_dir": "migrations"
     }
   ],
@@ -22,7 +22,7 @@
   "kv_namespaces": [
     {
       "binding": "OAUTH_KV",
-      "id": "REMPLACE_PAR_TON_ID_KV"
+      "id": "b8afe5d77dfa41889d0f3b25685484ed"
     }
   ]
 
