@@ -1,0 +1,25 @@
+{
+  "name": "mes-taches",
+  "version": "1.0.0",
+  "description": "App de tâches perso avec serveur MCP pour Claude",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "types": "wrangler types",
+    "db:migrate:local": "wrangler d1 migrations apply mes-taches --local",
+    "db:migrate:remote": "wrangler d1 migrations apply mes-taches --remote"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.148.0"
+  },
+  "dependencies": {
+    "@cfworker/json-schema": "^4.1.1",
+    "@cloudflare/workers-oauth-provider": "^1.2.3",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  },
+  "type": "module"
+}

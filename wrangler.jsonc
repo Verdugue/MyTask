@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mes-taches",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "observability": { "enabled": true },
+
+  // Base de données des tâches (D1 = SQLite chez Cloudflare)
+  // Remplace database_id par l'id affiché par : npx wrangler d1 create mes-taches
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mes-taches",
+      "database_id": "REMPLACE_PAR_TON_ID_D1",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Stockage des jetons OAuth (connexion de Claude)
+  // Remplace id par celui affiché par : npx wrangler kv namespace create OAUTH_KV
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "REMPLACE_PAR_TON_ID_KV"
+    }
+  ]
+
+  // Secrets à définir (jamais dans ce fichier) :
+  //   npx wrangler secret put APP_PASSWORD     -> ton mot de passe pour l'app
+  //   npx wrangler secret put SESSION_SECRET   -> une longue chaîne aléatoire (32+ caractères)
+}
